@@ -1,3 +1,4 @@
+import {cart} from '../data/cart.js';
 
 let productsHTML = '';
 
@@ -10,7 +11,7 @@ productsHTML +=`
       </div>
 
       <div class="product-name limit-text-to-2-lines">
-      ${product.name}
+      ${product.id}
       </div>
 
       <div class="product-rating-container">
