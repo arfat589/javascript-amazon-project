@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+   <head></head>
+   <body>
+
+      <input placeholder="name" class="js-input-name"> 
+      <button onclick="
+      addName()
+    
+      ">Add</button>
+
+    <div class="js-input-message"></div>
+
+      <script>
+       function addName() {
+         const inputElement=document.querySelector('.js-input-name')
+      const name =inputElement.value
+      console.log(name)
+
+      document.querySelector('.js-input-message')
+      .innerHTML = name
+
+      inputElement.value = '';
+
+      document.body.addEventListener('keydown', () => {
+         if(event.key === 'Enter') {
+            addName()
+         }
+      })
+       }
+      </script>
+   </body>
+</html>
