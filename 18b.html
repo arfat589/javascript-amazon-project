@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+   <head></head>
+   <body>
+
+      <script>
+
+         fetch('https://supersimplebackend.dev/greeting')
+         .then((response) => {
+            response.text()
+         }).then((text) => {
+            console.log('text')
+         })
+      </script>
+   </body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+   <head></head>
+   <body>
+
+      <script>
+
+       async function postGreeting() {
+           const response = await fetch('https://supersimplebackend.dev/greeting',{
+               method:'POST',
+               headers:{
+                  'Content-Type':'application/json'
+               },
+               body:JSON.stringify({
+                  name:'arfat hussain'
+               })
+            })
+           const text = await response.text()
+           console.log('text')
+         }
+         postGreeting();
+      </script>
+   </body>
+</html>

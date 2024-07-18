@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+   <head>
+
+      <style>
+.todo-grid{
+   display:grid;
+   grid-template-columns:150px 200px;
+}
+      </style>
+   </head>
+   <body>
+      <input class="js-input" type="text" placeholder="name">
+      <input class="js-date-input" type="date">
+      <button onclick="
+      addName()
+      " class="js-add-button">Add</button>
+      <div class="js-name todo-grid"></div>
+
+
+
+      <script>
+         const todoList = [{
+           name: 'meraj',
+         dueDate:'02/06/2024'}, 
+          { name:'arfat',
+            dueDate:'02/06/2024'
+          },
+          {name:'najiba',
+          dueDate:'02/06/2024'
+        }];
+
+        renderTodoList();
+
+         function renderTodoList(){
+            
+         let todoListHTML =''
+
+
+todoList.forEach((todoObject,index) => {
+   const name = todoObject.name
+   const dueDate =todoObject.dueDate
+   const html = `
+  <div>${name}</div>
+  <div>${dueDate}</div>
+  `
+   
+
+   todoListHTML +=html
+
+ 
+})
+
+document.querySelector('.js-name')
+.innerHTML =todoListHTML
+
+         }
+
+
+
+         function addName() {
+           const inputElement = document.querySelector('.js-input')
+           const name = inputElement.value
+
+           const dateElement = document.querySelector('.js-date-input')
+           const dueDate = dateElement.value
+console.log(name)
+           todoList.push({
+            name:name,
+         dueDate:dueDate})
+           console.log(todoList)
+
+           document.querySelector('.js-name')
+           .innerHTML =todoList
+
+           renderTodoList()
+         }
+
+      </script>
+   </body>
+</html> 
